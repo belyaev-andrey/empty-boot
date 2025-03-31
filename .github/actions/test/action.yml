@@ -1,0 +1,11 @@
+name: test
+author: andrey.belyaev
+description: test
+runs:
+  using: composite
+  steps:
+    - name: checkout
+      id: checkout
+      uses: actions/checkout@v4
+      with:
+        show-progress: 'true'

@@ -1,0 +1,8 @@
+name: workflow.yml
+on: push
+jobs:
+  checkout:
+    runs-on: ubuntu-22.04
+    steps:
+      - id: checkout
+        uses: ./.github/actions/test
