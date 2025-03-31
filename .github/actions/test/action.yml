@@ -4,8 +4,14 @@ description: test
 runs:
   using: composite
   steps:
-    - name: checkout
-      id: checkout
-      uses: actions/checkout@v4
+    - name: Set up JDK 11 for x64
+      id: java-setup
+      uses: actions/setup-java@v4
       with:
-        show-progress: 'true'
+        java-version: '23'
+        distribution: 'temurin'
+        architecture: x64
+        cache: maven
+    - name: Run the Maven verify phase
+      shell: sh
+      run: mvn --batch-mode --update-snapshots verify
