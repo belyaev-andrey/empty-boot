@@ -11,7 +11,7 @@ runs:
         java-version: '23'
         distribution: 'temurin'
         architecture: x64
-        cache: maven
-    - name: Run the Maven verify phase
+        cache: gradle
+    - name: Run the Gradle verify phase
       shell: sh
-      run: mvn --batch-mode --update-snapshots verify
+      run: gradle clean jar
